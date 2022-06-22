@@ -22,7 +22,9 @@ fun MeditateScreen() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        ExploreMeditation()
+        HomeSection("Explore Meditation", modifier = Modifier) {
+            ExploreMeditation()
+        }
     }
 }
 

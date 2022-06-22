@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,8 +32,8 @@ fun Featured(featuredContent: FeaturedContent) {
                     RoundedCornerShape(8.dp)
                 )
             )
-            Text(text = title)
-            Text(text = description)
+            Text(text = title, style = MaterialTheme.typography.h4)
+            Text(text = description, style = MaterialTheme.typography.body1)
             Button(
                 onClick = {},
                 modifier = Modifier

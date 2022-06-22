@@ -14,6 +14,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import io.sharan.headspace.R
+import io.sharan.headspace.data.Explore
+import io.sharan.headspace.data.getAllExploreContent
 import io.sharan.headspace.ui.theme.Background
 
 @Composable
@@ -30,16 +32,16 @@ fun MeditateScreen() {
 
 
 @Composable
-fun ExploreMeditation(courses: List<String> = List(1000) { "$it" }) {
+fun ExploreMeditation(courses: List<Explore> = getAllExploreContent()) {
     LazyColumn(modifier = Modifier.padding(4.dp)) {
-        items(items = courses) { name ->
-            ExploreItem(name = name)
+        items(items = courses) {
+            ExploreItem(explore = it)
         }
     }
 }
 
 @Composable
-fun ExploreItem(name: String) {
+fun ExploreItem(explore: Explore) {
     Card(
         backgroundColor = Background,
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
@@ -55,15 +57,15 @@ fun ExploreItem(name: String) {
                     .weight(1F)
                     .padding(12.dp)
             ) {
-                Text(text = "Hello")
+                Text(text = explore.title)
                 Text(
-                    text = name,
-                    style = MaterialTheme.typography.h4.copy(fontWeight = FontWeight.ExtraBold)
+                    text = explore.description,
+                    style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Light)
                 )
             }
             Image(
-                painter = painterResource(id = R.drawable.ic_course_1),
-                contentDescription = "Course name"
+                painter = painterResource(id = explore.drawable),
+                contentDescription = null
             )
         }
     }

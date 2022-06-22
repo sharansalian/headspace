@@ -70,7 +70,7 @@ fun HeadSpaceBottomNavigation(
                     Text(text = it.name)
                 },
                 selected = selected,
-                selectedContentColor = Color.Green,
+                selectedContentColor = MaterialTheme.colors.primary,
                 unselectedContentColor = Color.Gray, //TODO: 1. Use Material Theme Setup for coloros
                 onClick = { onItemClick(it) }
             )

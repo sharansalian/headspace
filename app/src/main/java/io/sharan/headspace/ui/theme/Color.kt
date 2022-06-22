@@ -8,3 +8,5 @@ val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
 val Background = Color(0xFFF9F6F4)
+
+val Orange = Color(0xFFF47C30)

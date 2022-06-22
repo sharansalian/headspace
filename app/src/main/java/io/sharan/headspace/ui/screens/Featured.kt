@@ -2,8 +2,11 @@ package io.sharan.headspace.ui.screens
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
@@ -30,13 +33,19 @@ fun Featured(featuredContent: FeaturedContent) {
             )
             Text(text = title)
             Text(text = description)
-            Button(onClick = { /*TODO*/ }) {
-                Row {
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .padding(8.dp)
+                    .clip(RoundedCornerShape(32.dp))
+            ) {
+                Row() {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_play),
-                        contentDescription = "Play"
+                        contentDescription = null,
+                        modifier = Modifier.padding(end = 4.dp)
                     )
-                    Text(text = "Play", color = Color.White)
+                    Text(text = "Icon Button")
                 }
             }
         }

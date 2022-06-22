@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -20,10 +22,20 @@ import io.sharan.headspace.ui.theme.Background
 
 @Composable
 fun MeditateScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
     ) {
+        HomeSection(title = "Meditate", modifier = Modifier) {
+            Featured(
+                featuredContent = FeaturedContent(
+                    title = "Finding time for joy",
+                    drawable = R.drawable.ic_featured_content,
+                    description = "Meditation . 12 min"
+                )
+            )
+        }
         HomeSection("Explore Meditation", modifier = Modifier) {
             ExploreMeditation()
         }
@@ -47,7 +59,6 @@ fun ExploreItem(explore: Explore) {
         modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
         Row(
-
             modifier = Modifier
                 .padding(12.dp)
         ) {

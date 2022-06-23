@@ -14,18 +14,19 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.sharan.headspace.R
 import io.sharan.headspace.data.Explore
 import io.sharan.headspace.data.getAllExploreContent
 import io.sharan.headspace.ui.theme.Background
 
+@Preview
 @Composable
 fun MeditateScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
     ) {
         HomeSection(title = "Meditate", modifier = Modifier) {
             Featured(

@@ -1,6 +1,7 @@
 package io.sharan.headspace.ui.screens
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -19,7 +20,9 @@ fun HomeSection(
         Text(
             text = title,
             style = MaterialTheme.typography.h4,
-            modifier = Modifier.paddingFromBaseline(top = 40.dp, bottom = 8.dp)
+            modifier = Modifier
+                .padding(start = 8.dp)
+                .paddingFromBaseline(top = 40.dp, bottom = 8.dp)
         )
         content()
     }
